@@ -55,7 +55,7 @@ $(document).ready(function () {
 
   // Google Sheets form submission
   const scriptURL =
-    "https://script.google.com/macros/s/AKfycbxJE45_fVZWr9A_yiPzS2m_HBkqb-l8srB9YJtXE-grC3n6Utv-TXdy2SCRy6zxgfZJ/exec";
+    "https://script.google.com/macros/s/AKfycbxwnaQP6J_J8zlgGZ8_xNKLoVfiO6OiMJdxcUR4FixP4E5rx7rWFFLsM_1w9gY721h_9Q/exec";
   const form = document.forms["submitToGoogleSheet"];
   const msg = document.getElementById("msg");
 
