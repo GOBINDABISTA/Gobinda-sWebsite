@@ -130,8 +130,8 @@ body{
 }
 
 .FirstElement .profile-photo{
-  width: 300px;
-  height:  300px;
+  width: 350px;
+  height:  400px;
   border-radius: 50%;
   overflow: hidden;
   border: 15px solid #444444;
