@@ -4,9 +4,10 @@
     <meta charset="UTF-8"> 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gobinda's Porfolio</title>
+    <meta name="description" content="Gobinda Bista — Computer Engineering undergraduate specializing in AI, Machine Learning, and Web Development. Portfolio showcasing projects, skills, and contact information.">
+    <meta name="theme-color" content="#20232a">
+    <title>Gobinda Bista — Portfolio</title>
     <link rel="icon" href="https://i.ibb.co/zRsTj3p/Frame-1-37.png">
-
 
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" class="stylesheet">
@@ -14,56 +15,56 @@
 </head> 
 
 <body>
+  <a class="skip-link" href="#home">Skip to content</a>
 
     <!-------------------------- Header Area -------------------------->
-    <header class="header-area">
-        <div class="container">
-            <div class="header">
-               
-                 <a href="" class="logo">
-                <img src="files/Screenshot (22).png" alt="Logo" class="logo" style="border-radius: 35%; width: 100px; height: 100px;">
-            </a>
-                   
-                <ul class="navbar">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#services">MY Services</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                
-                <div class="menu_icon">
-                    <i class="fa fa-bars"></i>
-                </div>
+  <header class="header-area">
+    <div class="container">
+      <div class="header">
+        <a href="#home" class="logo" aria-label="Gobinda Bista — Home">
+          <img src="files/Screenshot (22).png" alt="Gobinda Bista logo" class="logo-img">
+        </a>
 
-            </div>
-        </div> 
-    </header>
+        <nav role="navigation" aria-label="Primary navigation">
+          <ul id="primary-navigation" class="navbar">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <button class="menu_icon" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fa fa-bars" aria-hidden="true"></i>
+        </button>
+
+      </div>
+    </div>
+  </header>
  
     <!-------------------------- Home Page -------------------------->
     <div class="FirstElement" id="home">
         <div class="profile-photo">
-            <img src="files/Untitled.jpg" alt="profile picture">
+          <img src="files/Untitled.jpg" alt="Gobinda Bista — profile picture">
         </div>
         <div class="profile-text">
-            <h5>Hi I'm </h5><br>
-            <h1>Gobinda Bista</h1><br>
-            <p>Welcome to my portfolio website! I'm a passionate and aspiring  Computer Engineering undergraduate passionate about Artificial Intelligence, machine learning, and web development. I specialize in building AI models, detecting anomalies, and creating innovative solutions to solve real-world problems. With a self-motivated and dynamic mindset, I thrive in challenging environments and continuously seek to grow and improve.</p>
-            
-            <div class="btn-group">
-                <a href="GobindaBistaResume.pdf" class="btn   active">Download CV</a>
-                <a href="mailto:sirgb22@gmail.com" class="btn">Contact</a>
-            </div>
+          <h5>Hello, I'm</h5>
+          <h1>Gobinda Bista</h1>
+          <p>Computer Engineering undergraduate focused on Artificial Intelligence, Machine Learning, and Secure Systems. I design and implement practical ML solutions, build web applications, and apply security best practices to deliver reliable software. Currently pursuing hands-on projects in real-time recognition, anomaly detection, and predictive analytics.</p>
 
-            <div class="social">
-                <a href="mailto:sirgb22@gmail.com" target="_blank" title="Email"><i class="fa fa-envelope-open"></i></a>
-                <a href="https://github.com/GOBINDABISTA" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.facebook.com/ElonGobinda.Bista.526Gb.GB.Balen" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://www.linkedin.com/in/gobinda-bista-8ba3b4267/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-            
-            </div>
+          <div class="btn-group">
+            <a href="GobindaBistaResume.pdf" class="btn active" download>Download CV</a>
+            <a href="#contact" class="btn">Contact</a>
+          </div>
+
+          <div class="social" aria-label="Social links">
+            <a href="mailto:sirgb22@gmail.com" target="_blank" rel="noopener noreferrer" title="Email"><i class="fa fa-envelope-open"></i></a>
+            <a href="https://github.com/GOBINDABISTA" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/gobinda-bista-8ba3b4267/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
             
         </div>
     </div>
@@ -74,25 +75,19 @@
             <div class="about">
                 
                 <div class="about-content">
-                    <h4>About Me</h4>
-                    <ul>
-
-                        <li>I am Gobinda Bista, a forward-thinking Computer Engineering undergraduate at Khwopa College of Engineering, specializing in Artificial Intelligence, Machine Learning, Cybersecurity, and Ethical Hacking. With a solid technical foundation, I am passionate about designing and implementing innovative solutions to real-world problems.</li>
-                       <br><li> My diverse project portfolio includes a real-time facial recognition system, ransomware detection in encrypted networks, and stock market prediction and sentiment analysis. These experiences highlight my ability to work with advanced technologies and deliver impactful results. I am also proficient in ethical hacking and cybersecurity, ensuring the systems I develop are both efficient and secure.</li>
-                            <br><li>I thrive in challenging environments that demand creativity, technical expertise, and continuous learning. I am committed to contributing to meaningful projects and staying ahead in the dynamic tech industry.</li>
-                    </ul>
-                      
+                  <h4>About</h4>
+                  <p>Hi, I'm Gobinda Bista, a Computer Engineer with a strong interest in AI, machine learning, cybersecurity, and ethical hacking. I enjoy building practical, intelligent systems—from malware and ransomware detection to AI-powered tools for automation, security, and creativity.</p>
+                  <p>I focus on learning, experimenting, and creating solutions that solve real problems. My goal is to grow as an engineer, work on impactful projects, and build technology that shapes the future.</p>
                 </div>
                                   
                 <div class="about-skills">
-                    <ul>
-                        <li>Name:Gobinda Bista</li>
-                        <li>Age:22</li>     
-                        <li>From:Achham,Nepal</li>
-                        <li>Email:sirgb22@gmail.com</li>
-                        <li>Availabiltiy:Flexible</li>
-                        <li>Experience :1yr+</li>
-                    </ul>
+                  <ul>
+                    <li><strong>Name:</strong> Gobinda Bista</li>
+                    <li><strong>Location:</strong> Achham, Nepal</li>
+                    <li><strong>Email:</strong> <a href="mailto:sirgb22@gmail.com">sirgb22@gmail.com</a></li>
+                    <li><strong>Availability:</strong> Open to internships & part-time roles</li>
+                    <li><strong>Experience:</strong> Internship experience in ML engineering</li>
+                  </ul>
                 </div>
             </div>
         </div>
@@ -146,24 +141,19 @@
                     </div>
                 </div>
                 <div class="internship">
-                    <h3 class="title">Internship</h3>
+                    <h3 class="title">Experience</h3>
                     <div class="row">
                         <div class="timeline-box">
                             <div class="timeline">
                                 
                                 <!-- Timeline-item -->
                                 <div class="timeline-item">
-                                    <div class="circle-dot"></div>
-                                    <h3 class="timeline-title">
-                                        Machine Learning Engineer
-                                    </h3>
-                                    <h4 class="timeline-title">Fuse Machine pvt.ltd.</h4>
-                                    <h4 class="timeline-title">
-                                        <i class="fa fa-calendar"></i> dec-2024
-                                    </h4>
-                                    <li class="timeline-text">During my internship at Fusemachines Pvt. Ltd. as an ML Engineer, I contributed to data preprocessing, model development, evaluation, optimization, and deployment using cloud platforms, gaining hands-on experience with real-world AI/ML applications
-                                    </li>
-                                </div> 
+                                  <div class="circle-dot"></div>
+                                  <h3 class="timeline-title">Machine Learning Engineer (Intern)</h3>
+                                  <h4 class="timeline-title">Fusemachines Pvt. Ltd.</h4>
+                                  <h4 class="timeline-title"><i class="fa fa-calendar"></i> Dec 2024</h4>
+                                  <p class="timeline-text">Contributed to data preprocessing, model prototyping, evaluation and optimization. Worked on model deployment workflows and collaborated with cross-functional teams to productionize ML components.</p>
+                                </div>
                             
                             </div>
                         </div>
@@ -231,12 +221,12 @@
               <span class="skills__percent">50%</span>
             </li>
             <li class="skills__item">
-                <span class="skills__name">C</span>
-                <div class="skills__bar">
-                  <span class="skills__percentage skills__C"></span>
-                </div>
-                <span class="skills__percent">70%</span>
-              </li>
+              <span class="skills__name">C</span>
+              <div class="skills__bar">
+                <span class="skills__percentage skills__c"></span>
+              </div>
+              <span class="skills__percent">70%</span>
+            </li>
             <li class="skills__item">
               <span class="skills__name">PHP</span>
               <div class="skills__bar">
@@ -245,12 +235,12 @@
               <span class="skills__percent">80%</span>
             </li>
             <li class="skills__item">
-                <span class="skills__name">C++</span>
-                <div class="skills__bar">
-                  <span class="skills__percentage skills__C++"></span>
-                </div>
-                <span class="skills__percent">80%</span>
-              </li>
+              <span class="skills__name">C++</span>
+              <div class="skills__bar">
+                <span class="skills__percentage skills__cpp"></span>
+              </div>
+              <span class="skills__percent">80%</span>
+            </li>
           </ul>
         </div>
         <!-- Design Tools -->
@@ -277,43 +267,43 @@
          <div class="skills__box">
             <h3 class="skills__category">Other Skills</h3>
             <ul class="skills__list">
-    <div class="skill-item">
-        <span class="skill-name">AI/ML</span>
-        <div class="skill-bar">
-          <span class="skills__Percentage skills__AI/ML"></span>
-        </div>
-        <span class="skill-percentage">90%</span>
-      </div>
-      <div class="skill-item">
-        <span class="skill-name">DBMS</span>
-        <div class="skill-bar">
-          <div class="skill-level" style="width: 88%"></div>
-        </div>
-        <span class="skill-percentage">88%</span>
-      </div>
-      <div class="skill-item">
-        <span class="skill-name">Operating Systems</span>
-        <div class="skill-bar">
-          <div class="skill-level" style="width: 87%"></div>
-        </div>
-        <span class="skill-percentage">87%</span>
-      </div>
-      <div class="skill-item">
-        <span class="skill-name">Networking</span>
-        <div class="skill-bar">
-          <div class="skill-level" style="width: 85%"></div>
-        </div>
-        <span class="skill-percentage">85%</span>
-      </div>
-      <div class="skill-item">
-        <span class="skill-name">React</span>
-        <div class="skill-bar">
-          <div class="skill-level" style="width: 80%"></div>
-        </div>
-        <span class="skill-percentage">80%</span>
-      </div>
-    </div>
-      </div>
+              <li class="skills__item">
+                <span class="skills__name">AI / ML</span>
+                <div class="skills__bar">
+                  <span class="skills__percentage skills__ai"></span>
+                </div>
+                <span class="skills__percent">90%</span>
+              </li>
+              <li class="skills__item">
+                <span class="skills__name">DBMS</span>
+                <div class="skills__bar">
+                  <span class="skills__percentage skills__dbms"></span>
+                </div>
+                <span class="skills__percent">88%</span>
+              </li>
+              <li class="skills__item">
+                <span class="skills__name">Operating Systems</span>
+                <div class="skills__bar">
+                  <span class="skills__percentage skills__os"></span>
+                </div>
+                <span class="skills__percent">87%</span>
+              </li>
+              <li class="skills__item">
+                <span class="skills__name">Networking</span>
+                <div class="skills__bar">
+                  <span class="skills__percentage skills__networking"></span>
+                </div>
+                <span class="skills__percent">85%</span>
+              </li>
+              <li class="skills__item">
+                <span class="skills__name">React</span>
+                <div class="skills__bar">
+                  <span class="skills__percentage skills__react"></span>
+                </div>
+                <span class="skills__percent">80%</span>
+              </li>
+            </ul>
+          </div>
     </div>
   </section>
   
@@ -328,30 +318,114 @@
             <div class="projects">
                 <!-- 1st Project -->
                 <div class="project">
-                    <i class="fa fa-face-smile"></i>
-                    <h4>Facial Recognization in real-time system </h4>
-                    <p>Developed a real-time facial recognition system using deep learning techniques, enabling efficient identification and verification in dynamic environments. Implemented advanced algorithms to ensure high accuracy and minimal latency in real-world applications.</p>
+                  <div class="project-head">
+                    <i class="fa fa-camera"></i>
+                    <h4>Real-time Facial Recognition</h4>
+                  </div>
+                  <p>Built a real-time facial recognition prototype using CNN-based embeddings and OpenCV for video capture. Focused on latency reduction and accuracy improvement via feature embeddings and model quantization.</p>
+                  <div class="project-meta">
+                    <span class="project-tech">Tech: Python, OpenCV, TensorFlow / PyTorch</span>
+                    <div class="project-links">
+                      <a href="https://github.com/GOBINDABISTA/Facialrecognization-and-tracking" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Open Real-time Facial Recognition on GitHub">View on GitHub <i class="fa-brands fa-github" aria-hidden="true"></i></a>
+                    </div>
+                  </div>
                 </div>
                 
                  <!-- 2nd Project -->
                  <div class="project">
-                    <i class="fa fa-virus"></i>
+                  <div class="project-head">
+                    <i class="fa fa-shield-virus"></i>
                     <h4>Ransomware Detection in Encrypted Networks</h4>
-                    <p>Developed an advanced ransomware detection system that operates within encrypted networks, utilizing deep learning techniques to identify unusual patterns and potential threats. The system ensures proactive threat mitigation while maintaining data privacy and security in encrypted environments.</p>
+                  </div>
+                  <p>Research project for anomaly detection in encrypted traffic using statistical and ML features. Aimed at detecting early indicators of ransomware without decrypting payloads.</p>
+                  <div class="project-meta">
+                    <span class="project-tech">Tech: Python, scikit-learn, network feature engineering</span>
+                    <div class="project-links">
+                      <a href="https://github.com/GOBINDABISTA/Ransomware-Detection-in-Encrypted-Networks-Using-Machine-Learning" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Open Ransomware Detection on GitHub">View on GitHub <i class="fa-brands fa-github" aria-hidden="true"></i></a>
+                    </div>
+                  </div>
                 </div>
                 <!-- 3rd Project -->
                 <div class="project">
-                    <i class="fa fa-bitcoin-sign"></i>
-                    <h4>Stock Market Prediction and Sentiment Analysis Using Machine Learning</h4>
-                <p>Developed a machine learning-based system to predict stock market trends by analyzing historical data and incorporating sentiment analysis of news and social media content. Leveraged advanced algorithms to identify market movements, providing actionable insights for investors. The project integrates data science techniques to combine quantitative analysis with qualitative sentiment, resulting in more accurate and timely predictions.</p>              
-  </div>
+                  <div class="project-head">
+                    <i class="fa fa-chart-line"></i>
+                    <h4>Stock Market Prediction & Sentiment Analysis</h4>
+                  </div>
+                  <p>Combined time-series models with sentiment analysis from news and social feeds to produce short-term market signals. Emphasized data cleaning, feature selection and evaluation on historical data.</p>
+                  <div class="project-meta">
+                    <span class="project-tech">Tech: Python, pandas, NLP</span>
+                    <div class="project-links">
+                      <a href="https://github.com/GOBINDABISTA" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Open Stock Market Prediction on GitHub">View on GitHub <i class="fa-brands fa-github" aria-hidden="true"></i></a>
+                    </div>
+                  </div>
+                </div>
                 <!-- 4th Project -->
                 <div class="project">
+                  <div class="project-head">
                     <i class="fa fa-laptop-code"></i>
-                    <h4>Portfolio Website</h4>
-                    <p>Created a portfolio website using HTML, CSS, and JavaScript, It serves as a platform to introduce myself, share my projects, and provide information about my  education and experience.</p>
+                    <h4>Personal Portfolio Website</h4>
+                  </div>
+                  <p>Designed and implemented this portfolio to showcase projects and professional background. Focus areas: responsive design, accessibility, and simple deployment. Tech: HTML, CSS, JavaScript.</p>
+                  <div class="project-links">
+                    <a href="https://github.com/GOBINDABISTA/Gobinda-sWebsite" target="_blank" rel="noopener noreferrer" class="project-link" title="Portfolio on GitHub" aria-label="Open Portfolio on GitHub">View on GitHub <i class="fa-brands fa-github" aria-hidden="true"></i></a>
+                  </div>
                 </div>
-                
+                <!-- 5th Project: Library Management System -->
+                <div class="project">
+                  <div class="project-head">
+                    <i class="fa fa-book-open"></i>
+                    <h4>Library Management System</h4>
+                  </div>
+                  <p>Full-stack library management web app with book catalog, user accounts, borrowing/return workflows, and admin dashboard.</p>
+                  <div class="project-meta">
+                    <span class="project-tech">Tech: Laravel (PHP), MySQL</span>
+                    <div class="project-links">
+                      <a href="https://github.com/GOBINDABISTA/LibraryManagementSystem-php" target="_blank" rel="noopener noreferrer" class="project-link" title="Library Management System on GitHub" aria-label="Open Library Management System on GitHub">View on GitHub <i class="fa-brands fa-github" aria-hidden="true"></i></a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 6th Project: Online Book Store -->
+                <div class="project">
+                  <div class="project-head">
+                    <i class="fa fa-store"></i>
+                    <h4>Online Book Store</h4>
+                  </div>
+                  <p>E-commerce web application for selling books online — product catalog, search, cart, checkout, and user profile.</p>
+                  <div class="project-meta">
+                    <span class="project-tech">Tech: PHP, MySQL</span>
+                    <div class="project-links">
+                      <a href="https://github.com/GOBINDABISTA/onlinebookstorewithphp" target="_blank" rel="noopener noreferrer" class="project-link" title="Online Book Store on GitHub" aria-label="Open Online Book Store on GitHub">View on GitHub <i class="fa-brands fa-github" aria-hidden="true"></i></a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 7th Project: School Website -->
+                <div class="project">
+                  <div class="project-head">
+                    <i class="fa fa-school"></i>
+                    <h4>School Website</h4>
+                  </div>
+                  <p>Responsive school website template with pages for curriculum, staff, events, and contact form. Built for educational institutions as a customizable template. Tech: HTML, CSS, JavaScript, and optionally a CMS backend.</p>
+                  <div class="project-links">
+                    <a href="https://github.com/GOBINDABISTA/SchoolWebsite-Template" target="_blank" rel="noopener noreferrer" class="project-link" title="School Website on GitHub" aria-label="Open School Website on GitHub">View on GitHub <i class="fa-brands fa-github" aria-hidden="true"></i></a>
+                  </div>
+                </div>
+
+                <!-- 8th Project: To-Do Tracker -->
+                <div class="project">
+                  <div class="project-head">
+                    <i class="fa fa-tasks"></i>
+                    <h4>To-Do Tracker</h4>
+                  </div>
+                  <p>A full-stack web application for managing daily tasks with features like task creation, editing, deletion, and completion tracking. Includes user authentication and persistent data storage.</p>
+                  <div class="project-meta">
+                    <span class="project-tech">Tech: PHP, MySQL, JavaScript, HTML/CSS</span>
+                    <div class="project-links">
+                      <a href="https://github.com/GOBINDABISTA/simpleTO-DO-tracker" target="_blank" rel="noopener noreferrer" class="project-link" title="To-Do Tracker on GitHub" aria-label="Open To-Do Tracker on GitHub">View on GitHub <i class="fa-brands fa-github" aria-hidden="true"></i></a>
+                    </div>
+                  </div>
+                </div>
             </div>
         </div>
     </section>
@@ -366,29 +440,29 @@
       </div>
       <div class="services">
           <!-- 1st Service -->
-          <div class="service">
+            <div class="service">
               <i class="fa fa-desktop"></i>
-              <h4>Web Development</h4>
-              <p>Designing and developing responsive websites using modern frameworks and technologies like HTML, CSS, JavaScript, and React.</p>
-          </div>
+              <h4>Web & Frontend Development</h4>
+              <p>Responsive web development and UI prototyping using HTML, CSS, JavaScript and component-based tooling.</p>
+            </div>
           <!-- 2nd Service -->
-          <div class="service">
+            <div class="service">
               <i class="fa fa-robot"></i>
-              <h4>AI & ML Solutions</h4>
-              <p>Building AI and machine learning models for predictive analytics, anomaly detection, and intelligent automation.</p>
-          </div>
+              <h4>AI & ML Engineering</h4>
+              <p>Model development, evaluation and deployment for classification, prediction and anomaly detection tasks.</p>
+            </div>
           <!-- 3rd Service -->
-          <div class="service">
+            <div class="service">
               <i class="fa fa-shield"></i>
-              <h4>Cybersecurity</h4>
-              <p>Providing ethical hacking services and secure system designs to ensure robust cybersecurity solutions.</p>
-          </div>
+              <h4>Security & Hardening</h4>
+              <p>Basic security assessments, secure coding practices, and awareness of ethical hacking techniques to improve system resilience.</p>
+            </div>
           <!-- 4th Service -->
-          <div class="service">
+            <div class="service">
               <i class="fa fa-line-chart"></i>
-              <h4>Data Analysis</h4>
-              <p>Performing data preprocessing, visualization, and analysis to extract valuable insights and drive decision-making.</p>
-          </div>
+              <h4>Data Analysis & Visualization</h4>
+              <p>Data preprocessing, exploratory analysis and visualization to inform model design and results interpretation.</p>
+            </div>
       </div>
   </div>
 </section>
@@ -403,11 +477,11 @@
                 <p>Get In Touch</p>
             </div>
             <div class="contact">
-                <form name="submitToGoogleSheet">
-                    <input type="text" name="NAME" placeholder="Your Name" required>
-                    <input type="email" name="EMAIL" placeholder="Your Email" required>
-                    <input type="text" name="SUBJECT" placeholder="Subject">
-                    <textarea name="MESSAGE" placeholder="Message"></textarea>
+                <form id="contact-form">
+                  <input type="text" name="from_name" id="contact-name" placeholder="Your Name" required>
+                  <input type="email" name="reply_to" id="contact-email" placeholder="Your Email" required>
+                  <input type="text" name="subject" id="contact-subject" placeholder="Subject">
+                  <textarea name="message" id="contact-message" placeholder="Message" required></textarea>
                     <input type="submit" value="Send Message" class="submit">
                 </form>
                 <span id="msg"></span>
@@ -415,15 +489,39 @@
         </div>
     </section>
     <div class="map-container">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.364451717243!2d85.3240!3d27.7172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1bcb17141e9b%3A0x1a04c5e1a3070e5b!2sKathmandu%2C%20Nepal!5e0!3m2!1sen!2sus!4v1673589137974!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.364451717243!2d85.3240!3d27.7172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1bcb17141e9b%3A0x1a04c5e1a3070e5b!2sKathmandu%2C%20Nepal!5e0!3m2!1sen!2sus!4v1673589137974!5m2!1sen!2sus" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
    </div>
    
         
     <!-------------------------- JS -------------------------->
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <!-- Typed.js removed (unused) -->
     <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- EmailJS SDK for contact form (replace USER_ID with your EmailJS user id in script.js) -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
     <script src="script.js"></script>
+    <!-- WhatsApp chat widget -->
+    <div id="whatsapp-chat" data-phone="+9779842378928" aria-hidden="false">
+      <button id="wa-toggle" class="wa-button" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span class="wa-label">Chat</span>
+      </button>
+
+      <div id="wa-widget" class="wa-widget" aria-hidden="true">
+        <div class="wa-header">
+          <strong>Message me on WhatsApp</strong>
+          <button id="wa-close" class="wa-close" aria-label="Close chat">×</button>
+        </div>
+        <form id="wa-form">
+          <input id="wa-name" name="name" type="text" placeholder="Your name (optional)" />
+          <textarea id="wa-message" name="message" placeholder="Write your message here" required></textarea>
+          <div class="wa-actions">
+            <button type="submit" class="btn wa-send">Send to WhatsApp</button>
+          </div>
+          
+        </form>
+      </div>
+    </div>
     
     <!-------------------------- Footer section -------------------------->
 
