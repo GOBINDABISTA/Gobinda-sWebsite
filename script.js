@@ -1,11 +1,35 @@
 $(document).ready(function () {
   // Sticky header
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 1) {
+  var lastScroll = 0;
+  var scrollThreshold = 50; // pixels before hiding header
+  $(window).on('scroll', function () {
+    var st = $(this).scrollTop();
+
+    // sticky behavior
+    if (st > 1) {
       $(".header-area").addClass("sticky");
     } else {
       $(".header-area").removeClass("sticky");
     }
+
+    // hide on scroll down, show on scroll up
+    var navOpen = $('#primary-navigation').hasClass('open');
+    if (!navOpen) {
+      if (Math.abs(st - lastScroll) > 5) {
+        if (st > lastScroll && st > scrollThreshold) {
+          // scrolling down
+          $('.header-area').addClass('hidden');
+        } else if (st + 10 < lastScroll) {
+          // scrolling up
+          $('.header-area').removeClass('hidden');
+        }
+      }
+    } else {
+      // if nav is open, ensure header is visible
+      $('.header-area').removeClass('hidden');
+    }
+
+    lastScroll = st;
 
     updateActiveSection(); // Update active section highlighting
   });
@@ -53,24 +77,47 @@ $(document).ready(function () {
     origin: "bottom",
   });
 
-  // Google Sheets form submission
-  const scriptURL =
-    "https://script.google.com/macros/s/AKfycbxwnaQP6J_J8zlgGZ8_xNKLoVfiO6OiMJdxcUR4FixP4E5rx7rWFFLsM_1w9gY721h_9Q/exec";
-  const form = document.forms["submitToGoogleSheet"];
+  // Contact form - EmailJS integration
+  // 1) Go to https://www.emailjs.com and create an account
+  // 2) Create an email service and an email template matching the field names used below (from_name, reply_to, subject, message)
+  // 3) Set your Service ID and Template ID below and your User ID in emailjs.init() call
   const msg = document.getElementById("msg");
+  const contactForm = document.getElementById('contact-form');
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    fetch(scriptURL, { method: "POST", body: new FormData(form) })
-      .then((response) => {
-        msg.innerHTML = "Message sent successfully";
-        setTimeout(() => {
-          msg.innerHTML = "";
-        }, 5000);
-        form.reset();
-      })
-      .catch((error) => console.error("Error!", error.message));
-  });
+  if (typeof emailjs !== 'undefined') {
+    // Replace 'YOUR_USER_ID' with your EmailJS user ID (emailjs.init)
+    // You can also call emailjs.init in your dashboard — keep commented for now
+    // emailjs.init('YOUR_USER_ID');
+
+    contactForm && contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const btn = contactForm.querySelector('input[type=submit]');
+      if (btn) btn.disabled = true;
+
+      // Replace these with your own EmailJS service ID and template ID
+      const serviceID = 'service_1xm5zj8';
+      const templateID = 'template_riv3h7p';
+
+      // emailjs.sendForm returns a Promise
+      emailjs.sendForm(serviceID, templateID, '#contact-form')
+        .then(function (response) {
+          msg.innerHTML = 'Message sent successfully';
+          setTimeout(function () { msg.innerHTML = ''; }, 40);
+          contactForm.reset();
+        }, function (error) {
+          console.error('EmailJS error:', error);
+          msg.innerHTML = 'Failed to send message. Try again later.';
+        }).finally(function () {
+          if (btn) btn.disabled = false;
+        });
+    });
+  } else {
+    // Fallback: show message and keep default behaviour disabled
+    contactForm && contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      msg.innerHTML = 'EmailJS not loaded. Check your configuration.';
+    });
+  }
 
   // Update active section in header navigation
   function updateActiveSection() {
@@ -96,4 +143,145 @@ $(document).ready(function () {
       }
     });
   }
+
+  // Mobile menu toggle
+  $('.menu_icon').on('click', function () {
+    var $nav = $('#primary-navigation');
+    var isOpen = $nav.hasClass('open');
+    if (isOpen) {
+      $nav.removeClass('open');
+      $('body').removeClass('nav-open');
+      $('.nav-backdrop').remove();
+      $nav.attr('aria-hidden', 'true');
+      $(this).attr('aria-expanded', 'false');
+    } else {
+      $nav.addClass('open');
+      $('body').addClass('nav-open');
+      // add backdrop to capture outside clicks and dim background
+      if ($('.nav-backdrop').length === 0) {
+        $('<div class="nav-backdrop" />').appendTo('body').on('click', function () {
+          $nav.removeClass('open');
+          $('body').removeClass('nav-open');
+          $('.menu_icon').attr('aria-expanded', 'false');
+          $(this).remove();
+          $nav.attr('aria-hidden','true');
+        });
+      }
+      $(this).attr('aria-expanded', 'true');
+      $nav.attr('aria-hidden','false');
+      // ensure header remains visible while nav is open
+      $('.header-area').removeClass('hidden');
+    }
+  });
+
+  // Close mobile nav when a link is clicked
+  $('#primary-navigation li a').on('click', function () {
+    var $nav = $('#primary-navigation');
+    if ($nav.hasClass('open')) {
+      $nav.removeClass('open');
+      $('body').removeClass('nav-open');
+      $('.menu_icon').attr('aria-expanded', 'false');
+      $nav.attr('aria-hidden','true');
+      $('.nav-backdrop').remove();
+    }
+  });
+
+  // Ensure nav state on resize
+  $(window).on('resize', function () {
+    if ($(window).width() > 767) {
+      var $nav = $('#primary-navigation');
+      $nav.removeClass('open');
+      // remove inline styles if any and ensure desktop layout
+      $nav.css('max-height', '');
+      $('.menu_icon').attr('aria-expanded', 'false');
+      $nav.attr('aria-hidden','false');
+      // remove backdrop and body lock when switching to desktop
+      $('.nav-backdrop').remove();
+      $('body').removeClass('nav-open');
+    } else {
+      // on mobile, keep nav closed by default
+      $('#primary-navigation').removeClass('open');
+      $('#primary-navigation').attr('aria-hidden','true');
+    }
+  }).trigger('resize');
+  // initialize nav visibility on load (in case trigger/responsive didn't run yet)
+  (function initNav(){
+    if ($(window).width() > 767) {
+      $('#primary-navigation').removeClass('open');
+      $('#primary-navigation').css('max-height','');
+      $('.menu_icon').attr('aria-expanded','false');
+    } else {
+      $('#primary-navigation').removeClass('open');
+      $('#primary-navigation').css('max-height','0');
+      $('.menu_icon').attr('aria-expanded','false');
+    }
+  })();
+
+  /** WhatsApp widget handlers **/
+  var $waToggle = $('#wa-toggle');
+  var $waWidget = $('#wa-widget');
+  var $waClose = $('#wa-close');
+  var $waForm = $('#wa-form');
+  var $waContainer = $('#whatsapp-chat');
+
+  function openWa(){
+    $waWidget.slideDown(180).attr('aria-hidden','false');
+    $waToggle.setAttribute?.('aria-expanded','true');
+    $waToggle.attr && $waToggle.attr('aria-expanded','true');
+  }
+  function closeWa(){
+    $waWidget.slideUp(120).attr('aria-hidden','true');
+    $waToggle.attr && $waToggle.attr('aria-expanded','false');
+  }
+
+  $waToggle.on('click', function(){
+    if($waWidget.is(':visible')) closeWa(); else openWa();
+  });
+  $waClose.on('click', function(e){ e.preventDefault(); closeWa(); });
+
+  $waForm.on('submit', function(e){
+    e.preventDefault();
+    var phone = $waContainer.data('phone') || $waContainer.attr('data-phone') || '+977XXXXXXXX';
+    // normalize phone: remove spaces, + and dashes
+    var normalized = String(phone).replace(/[^0-9]/g, '');
+    var name = $('#wa-name').val() || '';
+    var message = $('#wa-message').val() || '';
+    var full = (name? (name + ' — '): '') + message;
+    if(!message.trim()){
+      alert('Please enter a message before sending.');
+      return;
+    }
+    var encoded = encodeURIComponent(full);
+    var url = 'https://wa.me/' + normalized + '?text=' + encoded;
+    // open in new tab/window
+    window.open(url, '_blank');
+    // optionally close widget and reset
+    closeWa();
+    $waForm[0].reset();
+  });
+
+  // Close mobile nav when clicking outside or pressing Escape
+  $(document).on('click', function (e) {
+    var $nav = $('#primary-navigation');
+    var $btn = $('.menu_icon');
+    if ($nav.hasClass('open')) {
+      // if click is outside header (and not on the button), close
+      if ($(e.target).closest('.header').length === 0) {
+        $nav.removeClass('open');
+        $('body').removeClass('nav-open');
+        $btn.attr('aria-expanded', 'false');
+      }
+    }
+  });
+
+  $(document).on('keydown', function (e) {
+    if (e.key === 'Escape') {
+      var $nav = $('#primary-navigation');
+      if ($nav.hasClass('open')) {
+        $nav.removeClass('open');
+        $('body').removeClass('nav-open');
+        $('.menu_icon').attr('aria-expanded', 'false');
+      }
+    }
+  });
 });
